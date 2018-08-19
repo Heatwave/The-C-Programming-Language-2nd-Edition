@@ -1,4 +1,4 @@
-#define ALLOCSIZE 10000
+#define ALLOCSIZE 1000000
 
 static char allocbuf[ALLOCSIZE];
 static char *allocp = allocbuf;
