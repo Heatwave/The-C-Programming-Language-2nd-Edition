@@ -1,0 +1,8 @@
+x * int
+argv * * char
+daytab * [] int
+daytab [] * int
+comp () * void
+comp * () void
+x () * [] * () char
+x [] * () * [] char
