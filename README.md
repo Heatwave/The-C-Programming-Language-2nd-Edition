@@ -101,4 +101,4 @@ Source code and solutions of exercises to _The C Programming Language 2nd Editio
 1. [6-3](./chapter-6-structures/7.words-appear-lines.c)
 1. 6-4 skipped
 1. [6-5](./chapter-6-structures/8.table-lookup.c)
-1. [6-6](./chapter-6-structures/)
+1. 6-6 skipped
