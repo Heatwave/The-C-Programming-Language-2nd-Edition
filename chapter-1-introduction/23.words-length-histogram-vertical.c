@@ -57,4 +57,6 @@ main()
 	printf("    ");
 	for (i = 1; i < maxLength + 1; ++i)
 		printf("%3d", i);
+
+	printf("\n");
 }

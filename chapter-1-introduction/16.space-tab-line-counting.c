@@ -5,7 +5,7 @@ main()
 	int c;
 	int space, tab, nl;
 
-	space, tab, nl = 0;
+	space = tab = nl = 0;
 
 	while((c = getchar()) != EOF) {	
 		if (c == ' ') {
@@ -16,5 +16,5 @@ main()
 			nl++;
 		}
 	}
-	printf("sapce: %d\ntab: %d\nnew line: %d\n", space, tab, nl);
+	printf("space: %d\ntab: %d\nnew line: %d\n", space, tab, nl);
 }

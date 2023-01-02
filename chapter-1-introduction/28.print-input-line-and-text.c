@@ -10,7 +10,6 @@ main()
 	int len;
 	int max;
 	char line[MAXLINE];
-	char longest[MAXLINE];
 
 	max = 0;
 	while ((len = myGetline(line, MAXLINE)) > 0)
