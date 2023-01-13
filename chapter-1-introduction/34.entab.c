@@ -13,7 +13,7 @@ main()
 
 	tabstop = 8;
 	while ((len = myGetline(line, MAXLINE)) > 0) {
-		spaceCount = 0;
+		int spaceCount = 0;
 
 		for (i = 0; i < len; ++i) {
 			if (line[i] == ' ')

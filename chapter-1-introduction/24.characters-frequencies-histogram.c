@@ -5,7 +5,7 @@ main()
 	int histogram[26];
 	int c, i, j;
 
-	for (i = 0; i <= 26; ++i)
+	for (i = 0; i < 26; ++i)
 		histogram[i] = 0;
 
 	while ((c = getchar()) != EOF) {
