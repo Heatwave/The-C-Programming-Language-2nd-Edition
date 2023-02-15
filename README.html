@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="the-c-programming-language-2nd-edition">The-C-Programming-Language-2nd-Edition</h1>
+<p>Source code and solutions of exercises to <em>The C Programming Language 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie</em></p>
+<h2 id="exercises">Exercises:</h2>
+<h3 id="1-introduction">1. Introduction</h3>
+<ol>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/1.hello.c">1-1</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/2.hello.c">1-2</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/5.celsius-fahrenheit-table.c">1-3</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/5.celsius-fahrenheit-table.c">1-4</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/7.fahrenheit-celsius-table-reverse.c">1-5</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/11.file-copying-3rd.c">1-6</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/12.print-eof.c">1-7</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/16.space-tab-line-counting.c">1-8</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/17.repalce-multi-space.c">1-9</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/18.replace-tab-backspace-backslash.c">1-10</a></li>
+<li>1-11 skipped</li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/20.print-words.c">1-12</a></li>
+<li>1-13
+<ul>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/22.words-length-histogram-horizontal.c">horizontal</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/23.words-length-histogram-vertical.c">vertical</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/24.characters-frequencies-histogram.c">1-14</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/26.fahrenheit-celsius-table-function.c">1-15</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/28.print-input-line-and-text.c">1-16</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/29.print-length-80-line.c">1-17</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/30.remove-line-end-space-and-tab.c">1-18</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/31.reverses.c">1-19</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/33.detab.c">1-20</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/34.entab.c">1-21</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/35.fold-line.c">1-22</a></li>
+<li><a href="https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-1-introduction/36.remove-comments.c">1-23</a></li>
+<li>1-24 skipped</li>
+</ol>
+<h3 id="2-types-operators-expressions">2. Types operators expressions</h3>
+<ol>
+<li><a href="./chapter-2-types-operators-expressions/1.ranges-of-variables.c">2-1</a></li>
+<li><a href="./chapter-2-types-operators-expressions/2.loop-without-logical-operators.c">2-2</a></li>
+<li><a href="./chapter-2-types-operators-expressions/3.atoi.c">2-3</a></li>
+<li><a href="./chapter-2-types-operators-expressions/8.squeeze2.c">2-4</a></li>
+<li><a href="./chapter-2-types-operators-expressions/9.any.c">2-5</a></li>
+<li><a href="./chapter-2-types-operators-expressions/11.setbits.c">2-6</a></li>
+<li><a href="./chapter-2-types-operators-expressions/12.invert.c">2-7</a></li>
+<li><a href="./chapter-2-types-operators-expressions/13.rightrot.c">2-8</a></li>
+<li><a href="./chapter-2-types-operators-expressions/15.bitcount2.c">2-9</a></li>
+<li><a href="./chapter-2-types-operators-expressions/16.lower2.c">2-10</a></li>
+</ol>
+<h3 id="3-control-flow">3. Control flow</h3>
+<ol>
+<li><a href="./chapter-3-control-flow/01.binsearch.c">3-1</a></li>
+<li>3-2
+<ul>
+<li><a href="./chapter-3-control-flow/03.escape.c">escape</a></li>
+<li><a href="./chapter-3-control-flow/04.unescape.c">unescape</a></li>
+</ul>
+</li>
+<li><a href="./chapter-3-control-flow/08.expand.c">3-3</a></li>
+<li><a href="./chapter-3-control-flow/09.itoa.c">3-4</a></li>
+<li><a href="./chapter-3-control-flow/10.itob.c">3-5</a></li>
+<li><a href="./chapter-3-control-flow/11.itoa.c">3-6</a></li>
+</ol>
+<h3 id="4-functions-and-program-structure">4. Functions and program structure</h3>
+<ol>
+<li><a href="./chapter-4-functions-and-program-structure/2.strrindex.c">4-1</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/3.atof-test.c">4-2</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/4.reverse-polish-calculator.c">4-3, 4-3, 4-5, 4-6</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/getch.c">4-7</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/getch.c">4-8</a></li>
+<li>4-9 skipped</li>
+<li>4-10 skipped</li>
+<li><a href="./chapter-4-functions-and-program-structure/5.getop-with-static.c">4-11</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/9.itoa-recursive.c">4-12</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/10.reverse.recursive.c">4-13</a></li>
+<li><a href="./chapter-4-functions-and-program-structure/11.swap-macro.c">4-14</a></li>
+</ol>
+<h3 id="5-pointers-and-arrays">5. pointers and arrays</h3>
+<ol>
+<li><a href="./chapter-5-pointers-and-arrays/3.getint.c">5-1</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/4.getfloat.c">5-2</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/15.strcat-pointer.c">5-3</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/16.strend.c">5-4</a></li>
+<li>5-5
+<ul>
+<li><a href="17.strncpy.c">strcpy</a></li>
+<li><a href="18.strncat.c">strncat</a></li>
+<li><a href="19.strncmp.c">strncmp</a></li>
+</ul>
+</li>
+<li><a href="./chapter-5-pointers-and-arrays/20.getline-pointer.c">5-6</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/24.pointer-arrays-without-alloc.c">5-7</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/27.year-month-day-pointer.c">5-8</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/27.year-month-day-pointer.c">5-9</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/32.expr.c">5-10</a></li>
+<li>5-11
+<ul>
+<li><a href="./chapter-5-pointers-and-arrays/33.detab.c">detab</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/34.entab.c">entab</a></li>
+</ul>
+</li>
+<li>5-12
+<ul>
+<li><a href="./chapter-5-pointers-and-arrays/35.detab-arg.c">detab</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/36.entab-arg.c">entab</a></li>
+</ul>
+</li>
+<li><a href="./chapter-5-pointers-and-arrays/37.tail.c">5-13</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/39.sort-with-r.c">5-14</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/40.sort-with-f.c">5-15</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/41.sort-with-d.c">5-16</a></li>
+<li>5-17 skipped</li>
+<li><a href="./chapter-5-pointers-and-arrays/43.dcl-error-handle.c">5-18</a></li>
+<li><a href="./chapter-5-pointers-and-arrays/44.undcl.c">5-19</a></li>
+<li>5-20 skipped</li>
+</ol>
+<h3 id="6-structures">6. structures</h3>
+<ol>
+<li><a href="./chapter-6-structures/3.getword.c">6-1</a></li>
+<li><a href="./chapter-6-structures/6.variables-group.c">6-2</a></li>
+<li><a href="./chapter-6-structures/7.words-appear-lines.c">6-3</a></li>
+<li>6-4 skipped</li>
+<li><a href="./chapter-6-structures/8.table-lookup.c">6-5</a></li>
+<li>6-6 skipped</li>
+</ol>
+
+</body>
+</html>
