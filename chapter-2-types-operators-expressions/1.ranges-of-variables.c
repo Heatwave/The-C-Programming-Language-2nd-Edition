@@ -10,7 +10,7 @@ main()
 	printf("INT_MAX: %d\n", INT_MAX);
 	printf("INT_MIN: %d\n", INT_MIN);
 	printf("LONG_MAX: %ld\n", LONG_MAX);
-	printf("LONG_MIN: %d\n", LONG_MIN);
+	printf("LONG_MIN: %ld\n", LONG_MIN);
 	printf("SCHAR_MAX: %d\n", SCHAR_MAX);
 	printf("SCHAR_MIN: %d\n", SCHAR_MIN);
 	printf("SHRT_MAX: %d\n", SHRT_MAX);
@@ -29,7 +29,7 @@ main()
 	printf("signed int max=%d\n",(int)((unsigned int) ~0 >> 1));
 	printf("signed short min=%d\n",-(short)((unsigned short) ~0 >> 1));
 	printf("signed short max=%d\n",(short)((unsigned short) ~0 >> 1));
-	printf("signed long min=%d\n",-(long)((unsigned long) ~0 >> 1));
+	printf("signed long min=%ld\n",-(long)((unsigned long) ~0 >> 1));
 	printf("signed long max=%ld\n",(long)((unsigned long) ~0 >> 1));
 
 	/*unsigned types*/
