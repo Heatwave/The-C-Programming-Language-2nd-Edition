@@ -16,8 +16,8 @@ main()
 
 int setbits(int x, int p, int n, int y)
 {
-	x = x & (~((~(~0 << n)) << p));
-	y = (y & (~(~0 << n))) << p;
+	x = x & (~((~(~0 << n)) << (p - n + 1)));
+	y = (y & (~(~0 << n))) << (p - n + 1);
 
 	return x | y;
 }
