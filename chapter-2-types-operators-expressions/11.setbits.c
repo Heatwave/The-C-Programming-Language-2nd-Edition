@@ -16,9 +16,23 @@ main()
 
 int setbits(int x, int p, int n, int y)
 {
-	x = x & (~((~(~0 << n)) << p));
-	y = (y & (~(~0 << n))) << p;
+	/* xxx............xxx  x */
+	/* yyy...........ynnn  y */
 
+	/* least significant position of the bits touched */
+	int r = p - n + 1;
+
+	/* 000...011110...000  mask */
+	/*        p  r ...210  position */
+	int mask = ~(~0 << p + 1) & (~0 << r);
+
+	/* 000...0nnnn0...000  */
+	y = (y << r) & mask;
+
+	/* xxx...x0000x...xxx */
+	x = x & ~mask;
+
+	/* xxx...xnnnnx...xxx */
 	return x | y;
 }
 
